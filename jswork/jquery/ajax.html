@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <button id="btn">등록</button>
+    <script>
+        ///get
+        // $("#btn").on("click", function(){
+        //     let url ="http://localhost/myserver/todoInsert";
+        //     $.post(url,"contents=test", function(obj){
+        //         console.dir(obj)
+        
+        //     });
+        // })   
+         
+        // $("#btn").on("click", function(){
+        //     let url ="http://localhost/myserver/todoInsert";
+        //     $.post(url,
+        //     {contents :'todo test'}, 
+        //         function(obj){
+        //         console.dir(obj)
+        
+        //     });
+        // })   
+
+        $("#btn").on("click", function(){
+            let url ="http://localhost/myserver/todoInsert";
+            $.ajax(url,{
+              //  async : false,//동기식
+                method: "post",
+                data : {contents :'todo test444'},
+            }).done( obj => console.log(obj))//인수가 여러개면 괄호
+
+            // .fail((xhr,statusText) => {
+            //     console.log(statusText)
+            //     console.log(xhr);
+            // })
+            console.log("요청")    //2
+    
+        })// 구조외워야댐 
+
+        /* fetch(url,{
+            method :"post"
+            heatders:{conn :},
+            data: ___
+        }*/
+        // fetch(url?id=ddd&)
+        // .then()
+        // .then(obj=>{})
+    </script>
+</body>
+</html>

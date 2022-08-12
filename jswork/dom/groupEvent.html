@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroupEvent</title>
+    <script>
+        window.addEventListener("load",function(){ //$(function(){})
+        //추가버튼 핸들러    
+        btn.addEventListener("click",function(){
+              // let d = document.createElement("div")
+              // d.innerHTML=txt.value
+              // result.appendChild(d)
+              result.innerHTML += `<div class="adddiv">${txt.value}</div>`;
+                               // `<P class="adddiv">${txt.value}</P>`; //p태그로 할 경우
+            })
+        //div 태그 클릭핸들러
+        let divs = document.getElementsByClassName("adddiv")//Collection, no Array
+        // for(i=0; i<divs.length; i++){//(div of divs)
+        //     divs[i].addEventListener("click", function(){
+        //         this.style.color ="green"
+        //     })
+        // }
+        // divs.array.forEach(ele => {
+        //     ele.addEventListener("click",function(){
+        //         this.style.color ="red"
+        //     })
+        // });//배열이 아니라서 
+        
+        
+        result.addEventListener("click", function(){
+              if(  event.target.classList.contains("adddiv")){//add, remove,toggle
+              //if(event.target.tagName == 'P') //<p>태그로 할 경우     
+                this.style.color ="green";
+              } 
+                console.log(this);//this는 result ...this는 못씀
+            //  console.dir(event.target);//this안됨 result가 나옴
+            })
+        }
+        )
+    </script>
+</head>
+<body>
+    <input id="txt"><button id="btn">추가</button><br>
+    <div id="result">
+        <div class="adddiv">ddd</div>
+
+    </div>
+</body>
+</html>
